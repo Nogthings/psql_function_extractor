@@ -20,7 +20,7 @@ def csv_to_individual_sql_files(csv_file, output_dir):
                 proname = row['proname']
                 prosrc = row['prosrc']
 
-                # Escapamos comillas simples para evitar errores en el contenido SQL
+                # Cambiamos comillas simples para evitar errores en el contenido SQL
                 prosrc = prosrc.replace("'", "''")
 
                 # Generamos el nombre del archivo .sql y su contenido
@@ -55,8 +55,8 @@ def generate_sql_files():
 
 # Configuración de la interfaz gráfica
 root = Tk()
-root.title("CSV to Individual SQL Files")
-root.geometry("500x200")
+root.title("Extractor de funciones postgres")
+root.geometry("800x300")
 
 Label(root, text="Archivo CSV:").grid(row=0, column=0, padx=10, pady=10, sticky="e")
 csv_entry = Entry(root, width=50)
