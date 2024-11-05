@@ -7,23 +7,18 @@ def csv_to_individual_sql_files(csv_file, output_dir):
         with open(csv_file, 'r', encoding='utf-8') as csvfile:
             reader = csv.DictReader(csvfile)
 
-            # Verificamos que el archivo CSV tenga las columnas necesarias
             if 'proname' not in reader.fieldnames or 'prosrc' not in reader.fieldnames:
                 messagebox.showerror("Error", "El archivo CSV no contiene las columnas 'proname' y 'prosrc'")
                 return
             
-            # Creamos la carpeta de salida si no existe
             os.makedirs(output_dir, exist_ok=True)
             
-            # Iteramos sobre cada fila y creamos un archivo independiente
             for row in reader:
                 proname = row['proname']
                 prosrc = row['prosrc']
 
-                # Cambiamos comillas simples para evitar errores en el contenido SQL
                 prosrc = prosrc.replace("'", "''")
 
-                # Generamos el nombre del archivo .sql y su contenido
                 sql_file_path = os.path.join(output_dir, f"{proname}.sql")
                 with open(sql_file_path, 'w', encoding='utf-8') as sqlfile:
                     sqlfile.write(f"-- SQL script for {proname}\n")
