@@ -1,0 +1,3 @@
+([('index',
+   '/Users/nogx/dev/utils/sql_function_extractor/dist/index',
+   'EXECUTABLE')],)
