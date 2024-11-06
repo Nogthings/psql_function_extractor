@@ -2,6 +2,9 @@
 
 Este programa toma un archivo CSV con funciones de postgres  y genera archivos `.sql` independientes, donde el nombre de cada archivo es el valor de la primera columna (`proname`) y el contenido es el valor de la segunda columna (`prosrc`), permitiendo una organización fácil de funciones SQL exportadas.
 
+![Ejevutable](image.png)
+
+
 ## Tabla de Contenidos
 
 - [Requisitos](#requisitos)
