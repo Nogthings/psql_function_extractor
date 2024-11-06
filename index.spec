@@ -35,11 +35,5 @@ exe = EXE(
     target_arch=None,
     codesign_identity=None,
     entitlements_file=None,
-    icon=['sql.icns'],
-)
-app = BUNDLE(
-    exe,
-    name='index.app',
-    icon='sql.icns',
-    bundle_identifier=None,
+    icon=['sql.ico'],
 )
